@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title><%- blocks.title %></title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/logo/favicon.png">
+
+    <%- stylesheets -%>
+
+    <!-- core css -->
+    <link rel="stylesheet" href="/dist/core.css">
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="layout">
+        <!-- Side Nav START -->
+        <% include ../includes/sideNav %>
+        <!-- Side Nav END -->
+
+        <!-- Page Container START -->
+        <div class="page-container">
+          <!-- Header START -->
+          <% include ../includes/headerNav %>
+          <!-- Header END -->
+
+          <!-- Content Wrapper START -->
+          <div class="main-content">
+              <%- body -%>
+          </div>
+          <!-- Content Wrapper END -->
+
+          <!-- Footer START -->
+          <% include ../includes/footer %>
+          <!-- Footer END -->
+        </div>
+        <!-- Page Container END -->
+      </div>
+    </div>
+
+    <script src="/dist/core.js"></script>
+
+    <%- scripts -%>
+  </body>
+</html>

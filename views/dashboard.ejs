@@ -1,0 +1,90 @@
+<% layout('layouts/default') -%>
+
+<% block('title', 'Dashboard') %>
+
+<!-- page plugins css -->
+<% stylesheet('/jvectormap/jquery-jvectormap.css') %>
+<% stylesheet('/nvd3/build/nv.d3.min.css') %>
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="widget card">
+              <div class="card-block">
+                  <h5 class="card-title">Monthly Overview</h5>
+
+                  <div class="row mrg-top-35">
+                      <div class="col-md-12">
+                          <div>
+                              <canvas id="line-chart" height="220"></canvas>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-4">
+          <div class="card">
+              <div class="card-block">
+                  <div class="inline-block">
+                      <h1 class="no-mrg-vertical">168</h1>
+                      <p>Subscribes</p>
+                  </div>
+                  <div class="pdd-top-25 inline-block pull-right">
+                      <span class="label label-success label-lg mrg-left-5">+18%</span>
+                  </div>
+                  <div class="mrg-top-25">
+                      <div id="bar-config"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4">
+          <div class="card">
+              <div class="card-block">
+                  <div class="inline-block">
+                      <h1 class="no-mrg-vertical">68</h1>
+                      <p>Unsubscribes</p>
+                  </div>
+                  <div class="pdd-top-25 inline-block pull-right">
+                      <span class="label label-success label-lg mrg-left-5">+18%</span>
+                  </div>
+                  <div class="mrg-top-25">
+                      <div id="bar-config2"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4">
+          <div class="card">
+              <div class="card-block">
+                  <div class="inline-block">
+                      <h1 class="no-mrg-vertical">50</h1>
+                      <p>Net Users</p>
+                  </div>
+                  <div class="pdd-top-25 inline-block pull-right">
+                      <span class="label label-success label-lg mrg-left-5">+18%</span>
+                  </div>
+                  <div class="mrg-top-25">
+                      <div id="bar-config3"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- page plugins js -->
+<% script('/jvectormap/jquery-jvectormap.min.js') %>
+<% script('/js/maps/jquery-jvectormap-us-aea.js') %>
+<% script('/d3/dist/d3.min.js') %>
+<% script('/nvd3/build/nv.d3.min.js') %>
+<% script('/jquery-sparkline/jquery.sparkline.min.js') %>
+<% script('/chart.js/dist/Chart.min.js') %>
+
+<!-- page js -->
+<% script('/js/dashboard/dashboard.js') %>

@@ -1,0 +1,124 @@
+<% layout('layouts/default') -%>
+
+<% block('title', 'Settings') %>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-block">
+            <ul class="list-unstyled list-info">
+              <li>
+                <span class="thumb-img pdd-top-10">
+        					<i class="ti-help-alt text-primary font-size-30"></i>
+        				</span>
+                <div class="info">
+                  <b class="text-dark font-size-22">Connected Bot</b>
+                  <p class="no-mrg-btm ">The bread and butter</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="widget-feed">
+              <ul class="list-info">
+
+                <% if ((typeof facebookPages != 'string') && (typeof connectedFacebookPage == 'string')) { %>
+                  <% facebookPages.forEach(function(page) { %>
+                    <li class="mrg-btm-10">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="checkbox">
+                            <input id="check1" type="checkbox">
+                            <a href="https://m.me/<%= page.id %>" class="text-link"><span class="title"><b class="font-size-15"><%= page.name%></b></span></a>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="text-right mrg-top-5">
+                            <a href="#" data-page-id="<%= page.id%>" data-page-access-token="<%= page.access_token%>" class="connect-facebook-page">Connect Page</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  <% }); %>
+                <% } else if(typeof connectedFacebookPage == 'object') { %>
+
+                  <% facebookPages.forEach(function(page) { %>
+                    <% if (page.id == connectedFacebookPage.page_id) { %>
+                      <li class="mrg-btm-10">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="checkbox">
+                              <input id="check1" type="checkbox">
+                              <a href="https://m.me/<%= page.id %>" class="text-link"><span class="title"><b class="font-size-15"><%= page.name%></b></span></a>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="text-right mrg-top-5">
+                              <a href="#" data-page-id="<%= page.id%>" class="disconnect-facebook-page">Disconnect Page</a>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    <% } %>
+                  <% }); %>
+                <% } else { %>
+                  <a href="/auth/facebook">Connect Bot</a>
+                <% } %>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-block">
+            <ul class="list-unstyled list-info">
+              <li>
+                <span class="thumb-img pdd-top-10">
+        					<i class="ti-help-alt text-primary font-size-30"></i>
+        				</span>
+                <div class="info">
+                  <b class="text-dark font-size-22">Upgrade</b>
+                  <p class="no-mrg-btm ">Let's unlease some goodness</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="widget-feed">
+              <p>Create custom audiences for precise targeting via Facebook Ads using People Tab</p>
+              <p>Gain insights into your bot’s audience and create dynamic segments with People Tab</p>
+              <p>Join the top 5% of our preferred customers with Priority Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-block">
+            <ul class="list-unstyled list-info">
+              <li>
+                <span class="thumb-img pdd-top-10">
+        					<i class="ti-help-alt text-primary font-size-30"></i>
+        				</span>
+                <div class="info">
+                  <b class="text-dark font-size-22">Billing</b>
+                  <p class="no-mrg-btm ">Some accounts you have on record</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% script('/js/settings/settings.js') %>
